@@ -1,0 +1,137 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+}
+
+body,
+html {
+  min-height: 100vh;
+  margin: 0;
+}
+
+#bg {
+  /* The image used */
+  background-image: url("bg1.jpeg");
+
+  min-height: 100vh;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bgOverlay {
+  /* Full height */
+  min-height: 100vh;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.gonkForm {
+  width: 100%;
+  text-align: center;
+}
+
+.h2div {
+  margin: auto;
+  width: 100%;
+  text-align: center;
+}
+
+.gonkForm label {
+  font-weight: 400;
+  color: white;
+  font-size: 2.3em;
+  text-shadow: 1px 1px #000000;
+}
+
+.gonkTextbox {
+  font-family: inherit;
+  width: 50%;
+  border: 0;
+  border: 2px solid white;
+  border-radius: 10px;
+  margin: 1em;
+  outline: 0;
+  font-size: 1.8rem;
+  color: #fff;
+  padding: 7px 20px;
+  background: transparent;
+}
+
+.container {
+  height: 100%;
+  position: relative;
+}
+
+.vertical-center {
+  margin: 0;
+}
+
+.inputWrong {
+  color: #ff6961;
+  border-color: #ff6961;
+}
+
+.inputRight {
+  color: #77dd77;
+  border-color: #77dd77;
+}
+
+#q2form,
+#q3form,
+#cameoVid,
+#volWarning {
+  display: none;
+}
+
+.smallLabel {
+  padding-top: 3em;
+  padding-bottom: 2em !important;
+  font-size: 2em !important;
+  width: 100%;
+  display: inline-block;
+  margin: 0 auto !important;
+  text-align: center;
+  text-overflow: wrap;
+}
+
+.largeLabel {
+  display: inline-block;
+  margin: 0 auto;
+  text-align: center;
+  max-width: 40em !important;
+}
+
+.largeLabel {
+  padding-left: 1em !important;
+  padding-right: 1em !important;
+}
+
+video {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-height: 100%;
+  width: auto;
+  height: 100%;
+  z-index: -100;
+  transform: translateX(-50%) translateY(-50%);
+  background: url("//demosthenes.info/assets/images/polina.jpg") no-repeat;
+  background-size: cover;
+  transition: 1s opacity;
+  z-index: 100;
+}
+
+#volWarning {
+  position: fixed;
+  z-index: 99;
+  top: 50%;
+  left: 50%;
+  color: white;
+  font-size: 3em;
+  text-align: center;
+  transform: translateX(-50%) translateY(-50%);
+}

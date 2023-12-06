@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Raleway&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="bg">
+        <div class="bgOverlay">
+            <div class="container">
+                <div class="vertical-center">
+
+                    <form class="gonkForm" id="q1form" onsubmit="return q1Submit();">
+                        <label class="smallLabel">Hello Benedetta, answer my spooky riddle</label>
+                        <label class="largeLabel" for="q1input">There are those who seek me a lifetime but never we
+                            meet,<br>
+                            And those I kiss but who trample me beneath ungrateful feet.<br>
+                            At times I seem to favor the clever and the fair,<br>
+                            But I bless all those who are brave enough to dare.<br>
+                            By large, my ministrations are soft-handed and sweet,<br>
+                            But scorned, I become a difficult beast to defeat.<br>
+                            For though each of my strikes lands a powerful blow,<br>
+                            When I kill, I do it slow…</label><br>
+                        <input class="gonkTextbox" type="text" id="q1input" autofocus><br>
+                    </form>
+
+                    <form class="gonkForm" id="q2form" onsubmit="return q2Submit();">
+                        <label class="smallLabel">Well that was obviously too easy, what about this one...</label>
+                        <label class="largeLabel" for="q2input">Each morning I appear to lie at your feet. All day I
+                            will follow no matter how fast you run, yet I nearly perish in the
+                            midday sun.</label><br>
+                        <input class="gonkTextbox" type="text" id="q2input" autofocus><br>
+                    </form>
+
+                    <form class="gonkForm" id="q3form" onsubmit="return q3Submit();">
+                        <label class="smallLabel">Okay maaaaaybe you deserve this. Let's try one more...</label>
+                        <label class="largeLabel" for="q3input">What is the ACTUAL WORST trope. I mean FFS.</label><br>
+                        <input class="gonkTextbox" type="text" id="q3input" autofocus><br>
+                    </form>
+                </div>
+
+                <p id="volWarning">Turn the volume up...</p>
+
+                <video id="cameoVid" playsinline loop controls autoplay>
+                    <source src="./cameo.mp4" type="video/mp4" />
+                </video>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+
+<script>
+    var count = 1;
+
+    function q1Submit() {
+        var q1form = document.getElementById("q1form");
+        var q1input = document.getElementById("q1input");
+        var q1answergiven = q1input.value;
+
+        if (q1answergiven.toLowerCase() === "love") {
+            q1input.classList.add("inputRight");
+
+            setTimeout(function () {
+                q1form.style.display = "none";
+                document.getElementById("q2form").style.display = "block";
+                document.getElementById("q2input").focus();
+                document.getElementById("bg").style.backgroundImage = "url('bg2.jpeg')";
+            }, 300);
+        }
+        else {
+            q1input.classList.add("inputWrong");
+        }
+
+        return false;
+    }
+
+    function q2Submit() {
+        var q2form = document.getElementById("q2form");
+        var q2input = document.getElementById("q2input");
+        var q2answergiven = q2input.value;
+
+        if ((q2answergiven.toLowerCase() === "shadow") || (q2answergiven.toLowerCase() === "shadows") || (q2answergiven.toLowerCase() === "my shadow") || (q2answergiven.toLowerCase() === "your shadow")) {
+            q2input.classList.add("inputRight");
+
+            setTimeout(function () {
+                q2form.style.display = "none";
+                document.getElementById("q3form").style.display = "block";
+                document.getElementById("q3input").focus();
+                document.getElementById("bg").style.backgroundImage = "url('bg3.jpeg')";
+            }, 300);
+        }
+        else {
+            q2input.classList.add("inputWrong");
+        }
+
+        return false;
+    }
+
+    function q3Submit() {
+        var q3form = document.getElementById("q3form");
+        var q3input = document.getElementById("q3input");
+        var q3answergiven = q3input.value;
+
+        if ((q3answergiven.toLowerCase() === "pregnancy") || (q3answergiven.toLowerCase() === "pregnant")) {
+            q3input.classList.add("inputRight");
+
+            setTimeout(function () {
+                q3form.style.display = "none";
+
+
+                document.getElementById("bg").style.background = "#333";
+                document.getElementById("volWarning").style.display = "block";
+
+                setTimeout(function () {
+                    document.getElementById("volWarning").style.display = "none";
+                    document.getElementById("cameoVid").style.display = "block";
+                    document.getElementById("cameoVid").requestFullscreen()
+                    document.getElementById("cameoVid").play();
+
+                }, 6000);
+
+
+            }, 300);
+        }
+        else {
+            q3input.classList.add("inputWrong");
+        }
+
+        return false;
+    }
+
+</script>
+
+</html>
